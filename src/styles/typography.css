@@ -52,3 +52,27 @@
 .label-meta--wide {
   letter-spacing: var(--tracking-label);
 }
+
+/*
+ * Barlow Light at meta size. The meta bar and story-card meta lines are Light
+ * in the comps, not the Medium that .label-meta sets.
+ */
+.label-meta--light {
+  font-weight: var(--weight-body);
+}
+
+/* Mixed-case small text — the article byline is not a label, despite its size. */
+.type-dek {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-body);
+  font-size: var(--text-dek);
+  line-height: var(--leading-dek);
+}
+
+/* Long-form reading measure — looser than --leading-normal. */
+.type-prose {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-prose);
+}

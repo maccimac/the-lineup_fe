@@ -24,6 +24,13 @@
   --color-accent: var(--color-coral);
   /* Assumption: the comps use 1px hairlines but never state a rule color. */
   --color-rule: rgb(7 2 13 / 15%);
+  /* Article sidebar rules read visibly darker than the homepage hairlines. */
+  --color-rule-strong: rgb(7 2 13 / 30%);
+  /* The meta bar's bottom border is near-solid ink. */
+  --color-rule-ink: rgb(7 2 13 / 85%);
+  /* Footer meta and the pitch quote are the inverse ink, held back. */
+  --color-ink-inverse-muted: rgb(255 236 209 / 50%);
+  --color-ink-inverse-faint: rgb(239 233 224 / 33%);
 
   /* --- Families (node 33:43) --- */
   --font-display: 'Archivo Black', 'Arial Black', sans-serif;
@@ -39,21 +46,41 @@
   --weight-body: 300;
   --weight-meta: 500;
 
-  /* --- Sizes (16px root) --- */
-  --text-feature: 3.25rem; /* 52px */
-  --text-serif: 1.375rem; /* 22px */
-  --text-card: 1.125rem; /* 18px */
-  --text-body: 1rem; /* 16px */
-  --text-meta: 0.6875rem; /* 11px */
+  /* --- Sizes (16px root) ---
+   * Measured from the page comps (nodes 44:2, 40:2). The Design System page
+   * named only five; the comps use thirteen.
+   */
+  --text-feature: 3.25rem; /* 52px — home hero headline */
+  --text-headline: 2.875rem; /* 46px — article headline */
+  --text-quote: 1.75rem; /* 28px — pitch band quote */
+  --text-serif: 1.375rem; /* 22px — serif headlines, sidebar quote */
+  --text-section: 1.25rem; /* 20px — article section headings */
+  --text-card: 1.125rem; /* 18px — story card headlines */
+  --text-related: 0.875rem; /* 14px — related-link headline */
+  --text-body: 1rem; /* 16px — prose */
+  --text-dek: 0.8125rem; /* 13px — sidebar deks, article byline */
+  --text-link: 0.75rem; /* 12px — arrow links, footer meta */
+  --text-meta: 0.6875rem; /* 11px — nav, meta bar, card meta, page kickers */
+  --text-kicker: 0.625rem; /* 10px — story card + related kickers */
+  --text-micro: 0.5625rem; /* 9px — sidebar kickers */
 
   /* --- Leading --- */
-  --leading-tight: 1.1;
+  --leading-tight: 1.1; /* feature + article headlines */
+  --leading-card: 1.28; /* story card headlines */
   --leading-snug: 1.3;
+  --leading-serif: 1.35; /* serif headlines */
   --leading-normal: 1.5;
+  --leading-dek: 1.65; /* sidebar deks */
+  --leading-quote: 1.68; /* pitch band quote */
+  --leading-prose: 1.75; /* hero dek, article body */
 
   /* --- Tracking --- */
-  --tracking-meta: 0.1em; /* 11px x 0.1  = 1.1px,  node 33:62 */
-  --tracking-label: 0.12em; /* 11px x 0.12 = 1.32px, node 33:27 */
+  --tracking-tight: 0.02em; /* story card meta */
+  --tracking-link: 0.04em; /* arrow links */
+  --tracking-bar: 0.05em; /* meta bar */
+  --tracking-wordmark: 0.08em; /* nav wordmark */
+  --tracking-meta: 0.1em; /* nav links, footer wordmark */
+  --tracking-label: 0.12em; /* all kickers */
 
   /* --- Spacing, 4px base --- */
   --space-1: 0.25rem; /* 4px */
@@ -78,5 +105,6 @@
 
   /* --- Borders --- */
   --rule-width: 1px;
+  --rule-width-medium: 2px; /* nav bottom border, node 44:3 */
   --rule-width-thick: 2.5px; /* story-grid card top rules, node 44:35 */
 }

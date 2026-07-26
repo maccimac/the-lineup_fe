@@ -1,0 +1,20 @@
+/*
+ * Hairlines. These appear as often as borders on existing elements as they do
+ * standalone, so they are utilities rather than a <Rule> component.
+ */
+
+.rule {
+  border: 0;
+  border-top: var(--rule-width) solid var(--color-rule);
+  margin: 0;
+}
+
+/* Article sidebar dividers, node 40:24. */
+.rule--strong {
+  border-top-color: var(--color-rule-strong);
+}
+
+/* Story card top rules, node 44:35. */
+.rule--thick {
+  border-top: var(--rule-width-thick) solid var(--color-ink);
+}
