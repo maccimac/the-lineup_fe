@@ -221,7 +221,7 @@ Task 1 ends with build, lint, and tests all green. Later tasks each open RED on 
 git add .nvmrc package.json package-lock.json vite.config.ts tsconfig.app.json src/test/setup.ts src/test/harness.test.tsx
 ```
 
-Propose: `chore: add Vitest + Testing Library harness on Node 22`
+Propose: `chore: add Vitest + Testing Library harness on Node 24`
 Show the user the staged file list and wait for approval. Do not commit.
 
 ---
@@ -3219,7 +3219,7 @@ Show the user the staged file list and wait for approval.
 - [ ] **Step 1: Run the full test suite**
 
 Run: `npm run test:run`
-Expected: PASS. 22 tests across 14 files (3 site/article content, 19 component).
+Expected: PASS across every test file added in Tasks 1–21, no failures.
 
 - [ ] **Step 2: Run the build and linter**
 
