@@ -1,0 +1,25 @@
+/* Nodes 44:17, 44:23, 44:28 (meta) and 40:28 (card). */
+
+.arrow-link {
+  text-decoration: none;
+}
+
+.arrow-link:hover {
+  text-decoration: underline;
+}
+
+.arrow-link--meta {
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-meta);
+  font-size: var(--text-link);
+  letter-spacing: var(--tracking-link);
+}
+
+.arrow-link--card {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-related);
+  line-height: var(--leading-snug);
+}
