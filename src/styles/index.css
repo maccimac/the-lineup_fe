@@ -1,0 +1,12 @@
+/*
+ * The Lineup — design system entry point.
+ * Import this once (src/main.tsx); never import the parts individually.
+ *
+ * Order matters: tokens must be defined before base and typography use them,
+ * and the reset must land before either sets element defaults.
+ */
+
+@import './reset.css';
+@import './tokens.css';
+@import './base.css';
+@import './typography.css';

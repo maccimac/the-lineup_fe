@@ -1,0 +1,21 @@
+/* Component-specific styles live next to their component; shared design
+ * language lives in src/styles/. */
+
+.status {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: var(--rule-width) solid currentcolor;
+  border-radius: 999px;
+}
+
+.status-pending {
+  color: var(--color-ink-muted);
+}
+
+.status-ok {
+  color: var(--color-deep-forest);
+}
+
+.status-down {
+  color: var(--color-accent);
+}

@@ -1,0 +1,73 @@
+/* Element defaults — the design system's baseline for unstyled markup. */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-tight);
+}
+
+h1 {
+  font-size: var(--text-feature);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--text-card);
+  line-height: var(--leading-snug);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: var(--rule-width);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+hr {
+  border: 0;
+  border-top: var(--rule-width) solid var(--color-rule);
+  margin: 0;
+}
+
+blockquote {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-serif);
+  font-size: var(--text-serif);
+  line-height: var(--leading-snug);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-ink-inverse);
+}
+
+:focus-visible {
+  outline: var(--rule-width-thick) solid var(--color-accent);
+  outline-offset: 2px;
+}

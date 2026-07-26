@@ -1,3 +1,3 @@
 [x] React
-[] Design system
+[x] Design system
 [] Pages

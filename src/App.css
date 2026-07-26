@@ -1,0 +1,8 @@
+/* Parks the backend health pill out of the way until real pages exist. */
+
+.app__status {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  background-color: var(--color-bg);
+}

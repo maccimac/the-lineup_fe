@@ -1,0 +1,54 @@
+/*
+ * The five named type styles from Figma (node 33:43).
+ *
+ * Each class sets family, size, weight, leading and tracking only — color is
+ * deliberately left to the consumer, since the same style appears in ink,
+ * dim grey, forest and coral depending on context.
+ */
+
+/* Archivo Black 52px — hero headlines and feature titles. */
+.type-feature {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-feature);
+  line-height: var(--leading-tight);
+}
+
+/* Archivo Black 18px — story grid cards and section headers. */
+.type-card {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-card);
+  line-height: var(--leading-snug);
+}
+
+/* Jomolhari 22px — sidebar reading moments, pull quotes, editorial asides. */
+.type-serif {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-serif);
+  font-size: var(--text-serif);
+  line-height: var(--leading-snug);
+}
+
+/* Barlow Light 16px — paragraph copy, descriptions, long-form reading. */
+.type-body {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+}
+
+/* Barlow Medium 11px — navigation, bylines, category labels. */
+.label-meta {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-meta);
+  font-size: var(--text-meta);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+}
+
+/* Section labels sit slightly wider than nav meta (node 33:27). */
+.label-meta--wide {
+  letter-spacing: var(--tracking-label);
+}

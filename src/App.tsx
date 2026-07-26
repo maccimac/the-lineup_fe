@@ -1,11 +1,14 @@
 import BackendStatus from './components/BackendStatus'
+import StyleGuide from './components/StyleGuide'
+import './App.css'
 
 export default function App() {
   return (
-    <main className="page">
-      <h1 className="title">The Lineup</h1>
-      <p className="tagline">Content · Sustainability · Board sports</p>
-      <BackendStatus />
-    </main>
+    <>
+      <StyleGuide />
+      <div className="app__status">
+        <BackendStatus />
+      </div>
+    </>
   )
 }

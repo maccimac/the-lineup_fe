@@ -1,0 +1,184 @@
+/* Layout for the styleguide page only — no new design tokens are defined here.
+ * Mirrors the section rhythm of the Figma Design System page (node 33:2). */
+
+.guide {
+  max-width: var(--content-max);
+  padding: var(--space-10) var(--space-15) var(--space-20);
+}
+
+.guide__cover {
+  padding-bottom: var(--space-10);
+  border-bottom: var(--rule-width) solid var(--color-rule);
+}
+
+.guide__cover-title {
+  color: var(--color-ink);
+}
+
+.guide__cover-subtitle {
+  margin-top: var(--space-3);
+  color: var(--color-dim-grey);
+}
+
+.guide__section {
+  padding-top: var(--space-15);
+}
+
+.guide__section-label {
+  color: var(--color-deep-forest);
+}
+
+.guide__section-note {
+  max-width: 56rem;
+  margin-top: var(--space-3);
+  color: var(--color-ink-muted);
+}
+
+.guide__section-note--narrow {
+  max-width: 24rem;
+  margin-top: var(--space-6);
+}
+
+/* --- Logo lockups (node 33:16) --- */
+
+.lockups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.lockup {
+  display: grid;
+  place-items: center;
+  width: 21.25rem; /* 340px */
+  height: 8.75rem; /* 140px */
+}
+
+.lockup--cream {
+  background-color: var(--color-surface);
+  border: var(--rule-width) solid var(--color-ink);
+}
+
+.lockup--forest {
+  background-color: var(--color-deep-forest);
+}
+
+.lockup--mark {
+  width: 8.75rem; /* 140px — square */
+  background-color: var(--color-black);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: 1.75rem; /* 28px */
+  letter-spacing: 0.06em;
+}
+
+.wordmark--coral {
+  color: var(--color-accent);
+}
+
+.wordmark--cream {
+  color: var(--color-surface);
+}
+
+/* --- Color palette (node 33:26) --- */
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+  margin-top: var(--space-8);
+}
+
+.palette__item {
+  width: 11.25rem; /* 180px */
+}
+
+.swatch {
+  height: 11.25rem; /* 180px */
+}
+
+.swatch--outlined {
+  border: var(--rule-width) solid var(--color-ink);
+}
+
+.swatch--dim-grey {
+  background-color: var(--color-dim-grey);
+}
+
+.swatch--black {
+  background-color: var(--color-black);
+}
+
+.swatch--papaya-whip {
+  background-color: var(--color-papaya-whip);
+}
+
+.swatch--papaya-milk {
+  background-color: var(--color-papaya-milk);
+}
+
+.swatch--coral {
+  background-color: var(--color-coral);
+}
+
+.swatch--deep-forest {
+  background-color: var(--color-deep-forest);
+}
+
+.palette__name {
+  margin-top: var(--space-4);
+  color: var(--color-ink);
+}
+
+.palette__hex {
+  min-height: 1em; /* holds layout while the token value resolves */
+  color: var(--color-ink-muted);
+}
+
+/* --- Typography specimens (node 33:43) --- */
+
+.specimens {
+  margin-top: var(--space-8);
+}
+
+.specimen {
+  display: grid;
+  grid-template-columns: 11.25rem 12.5rem 13.75rem minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: baseline;
+  padding: var(--space-6) 0;
+  border-top: var(--rule-width) solid var(--color-rule);
+}
+
+.specimen__sample {
+  color: var(--color-ink);
+}
+
+.specimen__name {
+  color: var(--color-ink);
+}
+
+.specimen__spec {
+  color: var(--color-accent);
+}
+
+.specimen__usage {
+  color: var(--color-ink-muted);
+}
+
+/* The comps are desktop-only; this keeps the styleguide readable below that
+ * width without inventing responsive rules for the design system itself. */
+@media (width < 64rem) {
+  .guide {
+    padding-inline: var(--space-6);
+  }
+
+  .specimen {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+  }
+}
