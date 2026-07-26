@@ -1,0 +1,29 @@
+/* Section eyebrow. Nodes 44:14, 44:20, 44:36, 40:14, 40:27. */
+
+.kicker {
+  margin: 0;
+}
+
+.kicker--forest {
+  color: var(--color-deep-forest);
+}
+
+.kicker--coral {
+  color: var(--color-accent);
+}
+
+.kicker--ink {
+  color: var(--color-ink);
+}
+
+.kicker--micro {
+  font-size: var(--text-micro);
+}
+
+.kicker--kicker {
+  font-size: var(--text-kicker);
+}
+
+.kicker--meta {
+  font-size: var(--text-meta);
+}
