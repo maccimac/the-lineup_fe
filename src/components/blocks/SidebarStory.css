@@ -1,0 +1,26 @@
+/* Nodes 44:19–44:23 and 44:25–44:28. The comp's deks are invisible. */
+
+.sidebar-story__body {
+  display: flex;
+  gap: var(--space-8);
+  margin-top: var(--space-4);
+}
+
+.sidebar-story__text {
+  flex: 1;
+}
+
+.sidebar-story__headline {
+  color: var(--color-ink);
+  line-height: var(--leading-serif);
+  margin: 0;
+}
+
+.sidebar-story__dek {
+  color: var(--color-ink-muted);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-body);
+  font-size: var(--text-dek);
+  line-height: var(--leading-dek);
+  margin: var(--space-3) 0 var(--space-4);
+}
