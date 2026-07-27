@@ -2,7 +2,6 @@
 
 .kicker {
   margin: 0;
-  letter-spacing: var(--tracking-label);
 }
 
 .kicker--forest {
@@ -17,14 +16,14 @@
   color: var(--color-ink);
 }
 
-.kicker--micro {
+.kicker.kicker--micro {
   font-size: var(--text-micro);
 }
 
-.kicker--kicker {
+.kicker.kicker--kicker {
   font-size: var(--text-kicker);
 }
 
-.kicker--meta {
+.kicker.kicker--meta {
   font-size: var(--text-meta);
 }

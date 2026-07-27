@@ -3,8 +3,6 @@
 .story-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: var(--color-surface);
-  padding-inline: var(--page-gutter);
   padding-bottom: var(--space-10);
 }
 

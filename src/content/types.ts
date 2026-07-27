@@ -60,3 +60,13 @@ export type Article = {
   pullQuote: string
   related: LinkRef
 }
+
+/** The homepage's full content payload — everything HomeTemplate needs. */
+export type HomeContent = {
+  hero: FeatureStory
+  editorsLetter: SidebarStory
+  featuredWork: SidebarStory
+  pitchQuote: string
+  stories: Story[]
+  metaBarCenter: string
+}

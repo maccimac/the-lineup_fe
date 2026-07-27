@@ -18,9 +18,5 @@
 
 .sidebar-story__dek {
   color: var(--color-ink-muted);
-  font-family: var(--font-sans);
-  font-weight: var(--weight-body);
-  font-size: var(--text-dek);
-  line-height: var(--leading-dek);
   margin: var(--space-3) 0 var(--space-4);
 }

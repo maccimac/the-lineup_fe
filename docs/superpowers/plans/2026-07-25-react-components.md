@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build the fourteen presentational components, plus a typed content module, that the Homepage (`44:2`) and Article Template (`40:2`) comps are assembled from.
+**Goal:** Build the seventeen presentational components, plus a typed content module, that the Homepage (`44:2`) and Article Template (`40:2`) comps are assembled from.
 
 **Architecture:** Components are grouped into `chrome/`, `primitives/`, and `blocks/` under `src/components/`. Every component is presentational — it takes props from `src/content/` and holds no state. Layout CSS is co-located per component and written against tokens; shared design language stays in `src/styles/`. Each component gets a Vitest + Testing Library spec and a Storybook story.
 
@@ -3291,7 +3291,7 @@ Tell the user which nodes need fixing in Figma so design and code can reconverge
 
 ## Self-Review
 
-**Spec coverage.** All fourteen components in the spec's inventory have a task: chrome (11–15), primitives (6–10), blocks (16–21). The content module is Tasks 4–5, the portrait asset is Task 5 Step 1, the rule utilities are Task 3 Step 5. The spec's verification criteria are Task 22 Steps 1–5.
+**Spec coverage.** All seventeen components in the spec's inventory have a task: chrome (11–15), primitives (6–10), blocks (16–21). The content module is Tasks 4–5, the portrait asset is Task 5 Step 1, the rule utilities are Task 3 Step 5. The spec's verification criteria are Task 22 Steps 1–5.
 
 **Spec amendments.** Two spec statements are overridden by decisions made after it was written, and Task 22 Step 6 records both: Storybook replaces the extended StyleGuide as the verification surface, and Assumption 3's explanation of the clipped nav was wrong.
 

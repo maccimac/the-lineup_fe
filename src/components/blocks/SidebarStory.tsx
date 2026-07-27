@@ -25,7 +25,7 @@ export default function SidebarStoryBlock({ story }: SidebarStoryProps) {
           <h2 className="sidebar-story__headline type-serif">
             {story.headline}
           </h2>
-          <p className="sidebar-story__dek">{story.dek}</p>
+          <p className="sidebar-story__dek type-dek">{story.dek}</p>
           <ArrowLink href={story.link.href}>{story.link.label}</ArrowLink>
         </div>
       </div>

@@ -6,6 +6,13 @@ const meta: Meta<typeof StoryGrid> = {
   title: 'Blocks/StoryGrid',
   component: StoryGrid,
   args: { stories: HOME.stories },
+  decorators: [
+    (Story) => (
+      <div style={{ background: 'var(--color-surface)', padding: '0 7.5rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta

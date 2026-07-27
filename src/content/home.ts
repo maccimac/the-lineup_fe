@@ -1,4 +1,4 @@
-import type { FeatureStory, SidebarStory, Story } from './types'
+import type { FeatureStory, HomeContent, SidebarStory, Story } from './types'
 import portrait from '../assets/joshua-portrait.png'
 
 /* Copy taken verbatim from node 44:2. */
@@ -55,7 +55,7 @@ const stories: Story[] = [
   },
 ]
 
-export const HOME = {
+export const HOME: HomeContent = {
   hero,
   editorsLetter,
   featuredWork,

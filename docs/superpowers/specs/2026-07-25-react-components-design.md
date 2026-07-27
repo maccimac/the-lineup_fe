@@ -45,7 +45,7 @@ Out of scope:
 
 ## Architecture
 
-Fourteen presentational components, grouped into three directories. `src/components/` currently holds two flat files; fourteen more with paired CSS would make thirty-two, so the kit is grouped. `BackendStatus.tsx` and `StyleGuide.tsx` stay at the top level.
+Seventeen presentational components, grouped into three directories. `src/components/` currently holds two flat files; seventeen more with paired CSS would make thirty-eight, so the kit is grouped. `BackendStatus.tsx` and `StyleGuide.tsx` stay at the top level.
 
 ```
 src/components/
@@ -148,12 +148,12 @@ The Homepage portrait (`44:31`) is the only bitmap in either comp. Pull it with 
 
 ## Verification
 
-Routing does not exist until phase 5, but the kit is verified in **Storybook**, not an extended StyleGuide. Each of the fourteen components plus the seven blocks has a co-located `.stories.tsx` file (21 story files total) rendering it against sample content from `src/content/`; `npm run storybook` / `npm run build-storybook` is the kit's living documentation. The StyleGuide (`StyleGuide.tsx`, `localhost:5173`) keeps its phase-1 scope — it was not given a components section, and its behaviour is unchanged from phase 1.
+Routing does not exist until phase 5, but the kit is verified in **Storybook**, not an extended StyleGuide. All seventeen components (five primitives, five chrome, seven blocks) each have a co-located `.stories.tsx` file (17 story files total) rendering it against sample content from `src/content/`; `npm run storybook` / `npm run build-storybook` is the kit's living documentation. The StyleGuide (`StyleGuide.tsx`, `localhost:5173`) keeps its phase-1 scope — it was not given a components section, and its behaviour is unchanged from phase 1.
 
 - `npm run test:run` passes across every test file added in Tasks 1–21 (20 test files, 48 tests).
 - `npm run build` (`tsc -b && vite build`) and `npm run lint` both pass with no errors.
 - No hex literal exists anywhere in `src/` outside `tokens.css`, with one narrow exception: component `.css` files carry hex values only inside comments that document a snapped-color deviation (see below), never in a declaration.
-- `npm run build-storybook` builds cleanly; all 21 stories are included in the output with no build errors.
+- `npm run build-storybook` builds cleanly; all 17 stories are included in the output with no build errors.
 - `npm run dev` starts cleanly and serves the StyleGuide at `localhost:5173` unchanged from phase 1.
 - A pixel-level side-by-side against the Figma screenshots for `44:2` and `40:2` was not performed in this verification pass (no Figma MCP access in this environment); it remains an open follow-up for a human or browser-automation pass. The deviations catalogued below were instead found via `get_design_context` calls made during implementation of Tasks 3–21, not via a final visual diff.
 
@@ -163,20 +163,17 @@ Implementation surfaced defects in the Figma comps themselves — mostly text se
 
 **Invisible text, fixed with new color tokens:**
 
-| Comp element | Node(s) | Fix | Component |
-|---|---|---|---|
-| Nav links, inactive | `44:5`–`44:7` | `--color-ink` | `SiteHeader` |
-| Nav link, active/hover | `44:10`–`44:12` | `--color-accent` | `SiteHeader` |
-| Meta bar (all three slots) | `44:16` | `--color-ink-muted` | `MetaBar` |
-| Hero dek | `44:22` | `--color-ink-muted` | `HeroFeature` |
-| Sidebar deks (Letter + Featured Work) | `44:27` | `--color-ink-muted` | `SidebarStory` |
-| Story card meta line | `44:38` | `--color-ink-muted` | `StoryCard` |
-| Article byline | `44:43`, `44:48` | `--color-ink-muted` | `ArticleHeader` |
-| Nav links, inactive (article page) | `40:6`–`40:8` | `--color-ink` | `SiteHeader` |
-| Nav link, active/hover (article page) | `40:11`–`40:13` | `--color-accent` | `SiteHeader` |
-| Meta bar (article page) | `40:16` | `--color-ink-muted` | `MetaBar` |
+| Element | Nodes | Token |
+|---|---|---|
+| Nav links (inactive) | `44:5–7`, `40:6–8` | `--color-ink` |
+| Nav link (active) | `40:9` | `--color-accent` |
+| Meta bar strings | `44:10–12`, `40:11–13` | `--color-ink-muted` |
+| Hero dek | `44:16` | `--color-ink-muted` |
+| Sidebar deks | `44:22`, `44:27` | `--color-ink-muted` |
+| Story card meta | `44:38`, `44:43`, `44:48` | `--color-ink-muted` |
+| Article byline | `40:16` | `--color-ink-muted` |
 
-Full node list: `44:5`–`44:7`, `44:10`–`44:12`, `44:16`, `44:22`, `44:27`, `44:38`, `44:43`, `44:48`, `40:6`–`40:8`, `40:11`–`40:13`, `40:16`.
+Full node list: `44:5–7`, `40:6–8`, `40:9`, `44:10–12`, `40:11–13`, `44:16`, `44:22`, `44:27`, `44:38`, `44:43`, `44:48`, `40:16`.
 
 **Snapped colors** (comp's literal value → existing token, rather than adding a new near-duplicate token):
 

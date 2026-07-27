@@ -13,7 +13,7 @@ test('renders kicker, headline, and byline', () => {
   expect(screen.getByText(/12 min read/)).toBeInTheDocument()
 })
 
-test('uses the coral kicker and the 46px headline scale', () => {
+test('uses the coral kicker and applies the article-header__headline class', () => {
   render(<ArticleHeader article={article} />)
   expect(screen.getByText('CASE STUDY')).toHaveClass('kicker--coral')
   expect(screen.getByRole('heading')).toHaveClass('article-header__headline')

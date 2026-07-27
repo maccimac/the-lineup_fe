@@ -8,7 +8,7 @@ type StoryCardProps = {
 
 export default function StoryCard({ story }: StoryCardProps) {
   return (
-    <article className="story-card">
+    <article className="story-card rule--thick">
       <Kicker size="kicker">{story.kicker}</Kicker>
       <h2 className="story-card__headline type-card">
         <a className="story-card__link" href={story.href}>
