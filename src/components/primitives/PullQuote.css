@@ -1,0 +1,20 @@
+/* Nodes 44:33 (band) and 40:25 (sidebar). */
+
+.pull-quote {
+  margin: 0;
+}
+
+.pull-quote--band {
+  font-size: var(--text-quote);
+  line-height: var(--leading-quote);
+  color: var(--color-ink-inverse-faint);
+  text-align: center;
+  max-width: 74.6875rem; /* 1195px, node 44:33 */
+  margin-inline: auto;
+}
+
+.pull-quote--sidebar {
+  font-size: var(--text-serif);
+  line-height: var(--leading-serif);
+  color: var(--color-deep-forest);
+}
