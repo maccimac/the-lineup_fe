@@ -1,0 +1,18 @@
+/* Nodes 44:4 (nav) and 44:50 (footer). */
+
+.wordmark {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  text-transform: uppercase;
+}
+
+.wordmark--nav {
+  font-size: 1.75rem; /* 28px */
+  letter-spacing: var(--tracking-wordmark);
+}
+
+.wordmark--footer {
+  font-size: 1rem; /* 16px */
+  letter-spacing: var(--tracking-meta);
+}
