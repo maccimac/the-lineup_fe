@@ -1,0 +1,24 @@
+/*
+ * Nodes 40:14–40:17. The article headline is 46px, not the homepage's 52px,
+ * so this does not use .type-feature. The comp's byline is invisible.
+ */
+
+.article-header__headline {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-headline);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  max-width: 47.5rem; /* 760px */
+  margin: var(--space-8) 0 0;
+}
+
+.article-header__byline {
+  color: var(--color-ink-muted);
+  margin: var(--space-10) 0 0;
+}
+
+.article-header__rule {
+  max-width: 47.5rem; /* 760px, node 40:17 */
+  margin-top: var(--space-6);
+}
