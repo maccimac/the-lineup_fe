@@ -1,0 +1,18 @@
+/*
+ * Node 44:29. Figma masks a 166.9 x 222.6 photograph with a 134px circle; the
+ * equivalent here is a fixed circular frame with the image cropped to cover.
+ */
+
+.portrait {
+  width: 8.375rem; /* 134px */
+  height: 8.375rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.portrait__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
