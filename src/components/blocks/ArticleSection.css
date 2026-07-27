@@ -1,0 +1,20 @@
+/* Nodes 40:18–40:23. Section headings are 20px, not the 18px card scale. */
+
+.article-section + .article-section {
+  margin-top: var(--space-10);
+}
+
+.article-section__heading {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-section);
+  line-height: var(--leading-snug);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-4);
+}
+
+.article-section__body {
+  color: var(--color-ink);
+  max-width: 42.5rem; /* 680px */
+  margin: 0 0 var(--space-4);
+}
