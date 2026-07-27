@@ -1,0 +1,19 @@
+/*
+ * Node 44:9. The comp sets all three strings to the surface color, rendering
+ * them invisible; they are muted ink here by deliberate deviation.
+ */
+
+.meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--meta-bar-height);
+  padding-inline: var(--page-gutter);
+  background-color: var(--color-surface);
+  border-bottom: var(--rule-width) solid var(--color-rule-ink);
+}
+
+.meta-bar__slot {
+  color: var(--color-ink-muted);
+  letter-spacing: var(--tracking-bar);
+}
