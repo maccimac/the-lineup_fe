@@ -1,0 +1,13 @@
+/* Nodes 40:26–40:28. */
+
+.related-link {
+  max-width: 23.75rem; /* 380px */
+}
+
+.related-link .kicker {
+  margin-top: var(--space-6);
+}
+
+.related-link__target {
+  margin-top: var(--space-2);
+}
