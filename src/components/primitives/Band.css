@@ -1,0 +1,18 @@
+/* Full-bleed section. Node 44:32. */
+
+.band {
+  width: 100%;
+}
+
+.band__inner {
+  padding-inline: var(--page-gutter);
+}
+
+.band--forest {
+  background-color: var(--color-deep-forest);
+  padding-block: var(--space-10); /* 40px, node 44:32 */
+}
+
+.band--surface {
+  background-color: var(--color-surface);
+}
