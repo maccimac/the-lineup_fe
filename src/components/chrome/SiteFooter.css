@@ -1,0 +1,17 @@
+/* Node 44:49. The comp uses #1e1e1e; the ink token wins per the phase-2 spec. */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem; /* 72px */
+  padding-inline: var(--page-gutter);
+  background-color: var(--color-ink);
+}
+
+.site-footer__meta {
+  color: var(--color-ink-inverse-muted);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-body);
+  font-size: var(--text-link);
+}
