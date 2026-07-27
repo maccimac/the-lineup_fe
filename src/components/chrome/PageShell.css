@@ -1,0 +1,12 @@
+/* The chrome every page shares. Nodes 44:2 and 40:2. */
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.page-shell__main {
+  flex: 1;
+}
