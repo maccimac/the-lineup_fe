@@ -1,0 +1,33 @@
+/*
+ * Node 44:3. The comp sets the inactive nav links to the surface color, which
+ * renders them invisible; they are ink here by deliberate deviation.
+ */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding-inline: var(--page-gutter);
+  background-color: var(--color-surface);
+  border-bottom: var(--rule-width-medium) solid var(--color-ink);
+}
+
+.site-header__home {
+  text-decoration: none;
+}
+
+.site-header__nav {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.site-header__link {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.site-header__link:hover,
+.site-header__link--active {
+  color: var(--color-accent);
+}
