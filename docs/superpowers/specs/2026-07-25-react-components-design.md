@@ -1,7 +1,7 @@
 # The Lineup — React Components — Design
 
 **Date:** 2026-07-25
-**Status:** Approved
+**Status:** Implemented
 **Phase:** 2 of 8 (see `MASTER TODO.md`)
 
 ## Purpose
@@ -144,13 +144,50 @@ The Homepage portrait (`44:31`) is the only bitmap in either comp. Pull it with 
 
 1. Kicker tones are forest on the Homepage and coral on the Article page. Confirm against `get_design_context` before building `Kicker`, rather than trusting the screenshots.
 2. The Article comp's background reads slightly warmer than the Homepage's. Treat both as `--color-bg` unless design context proves a second surface token is intended.
-3. Both comps' Nav and Footer frames are 1519px wide inside a 1440px Homepage frame, which clips the nav links in the rendered screenshot. This is a Figma artifact, not design intent — the chrome is built full-bleed with gutter tokens positioning content.
+3. ~~Both comps' Nav and Footer frames are 1519px wide inside a 1440px Homepage frame, which clips the nav links in the rendered screenshot. This is a Figma artifact, not design intent — the chrome is built full-bleed with gutter tokens positioning content.~~ **Corrected during implementation:** the homepage nav is not clipped by the 1519px frame. Its links are set to the surface color (matching the header background), which renders them invisible in the comp — not a framing artifact. See "Deviations from the comps" below for the fix and the full set of invisible-text defects this same pattern caused elsewhere.
 
 ## Verification
 
-Routing does not exist until phase 5, so this phase is verified through `StyleGuide.tsx`, which gains a "04 — Components" section rendering every component against sample content from `src/content/`. The styleguide is already the project's living documentation; extending it makes the kit visible at `localhost:5173` with no pages built.
+Routing does not exist until phase 5, but the kit is verified in **Storybook**, not an extended StyleGuide. Each of the fourteen components plus the seven blocks has a co-located `.stories.tsx` file (21 story files total) rendering it against sample content from `src/content/`; `npm run storybook` / `npm run build-storybook` is the kit's living documentation. The StyleGuide (`StyleGuide.tsx`, `localhost:5173`) keeps its phase-1 scope — it was not given a components section, and its behaviour is unchanged from phase 1.
 
-- `npm run build` (`tsc -b && vite build`) and `npm run lint` both pass.
-- The StyleGuide renders all fourteen components with no console errors, and all three webfonts still load.
-- No hex literal exists anywhere in `src/` outside `tokens.css`.
-- Side by side against the Figma screenshots for `44:2` and `40:2`, the chrome, story cards, and article sections match on type, color, and rule weight.
+- `npm run test:run` passes across every test file added in Tasks 1–21 (20 test files, 48 tests).
+- `npm run build` (`tsc -b && vite build`) and `npm run lint` both pass with no errors.
+- No hex literal exists anywhere in `src/` outside `tokens.css`, with one narrow exception: component `.css` files carry hex values only inside comments that document a snapped-color deviation (see below), never in a declaration.
+- `npm run build-storybook` builds cleanly; all 21 stories are included in the output with no build errors.
+- `npm run dev` starts cleanly and serves the StyleGuide at `localhost:5173` unchanged from phase 1.
+- A pixel-level side-by-side against the Figma screenshots for `44:2` and `40:2` was not performed in this verification pass (no Figma MCP access in this environment); it remains an open follow-up for a human or browser-automation pass. The deviations catalogued below were instead found via `get_design_context` calls made during implementation of Tasks 3–21, not via a final visual diff.
+
+## Deviations from the comps
+
+Implementation surfaced defects in the Figma comps themselves — mostly text set to the same color as its background, rendering it invisible. Each was given a distinct, legible token rather than silently matching the comp's literal (invisible) value. All are documented inline in the relevant component's `.css` file.
+
+**Invisible text, fixed with new color tokens:**
+
+| Comp element | Node(s) | Fix | Component |
+|---|---|---|---|
+| Nav links, inactive | `44:5`–`44:7` | `--color-ink` | `SiteHeader` |
+| Nav link, active/hover | `44:10`–`44:12` | `--color-accent` | `SiteHeader` |
+| Meta bar (all three slots) | `44:16` | `--color-ink-muted` | `MetaBar` |
+| Hero dek | `44:22` | `--color-ink-muted` | `HeroFeature` |
+| Sidebar deks (Letter + Featured Work) | `44:27` | `--color-ink-muted` | `SidebarStory` |
+| Story card meta line | `44:38` | `--color-ink-muted` | `StoryCard` |
+| Article byline | `44:43`, `44:48` | `--color-ink-muted` | `ArticleHeader` |
+| Nav links, inactive (article page) | `40:6`–`40:8` | `--color-ink` | `SiteHeader` |
+| Nav link, active/hover (article page) | `40:11`–`40:13` | `--color-accent` | `SiteHeader` |
+| Meta bar (article page) | `40:16` | `--color-ink-muted` | `MetaBar` |
+
+Full node list: `44:5`–`44:7`, `44:10`–`44:12`, `44:16`, `44:22`, `44:27`, `44:38`, `44:43`, `44:48`, `40:6`–`40:8`, `40:11`–`40:13`, `40:16`.
+
+**Snapped colors** (comp's literal value → existing token, rather than adding a new near-duplicate token):
+
+| Comp value | Token used | Where |
+|---|---|---|
+| `#f55f51` | `--color-accent` (`--color-coral`, `#ee6352`) | `Wordmark`, nodes `44:4`, `44:50` |
+| `#1f332b` | `--color-deep-forest` (`#10422e`) | `Band--forest` / home pitch band, node `44:32` |
+| `#1e1e1e` | `--color-ink` (`--color-black`, `#07020d`) | `SiteFooter`, node `44:49` |
+
+**Added type-scale size tokens.** The Design System page (`33:2`) named five sizes; the page comps (`44:2`, `40:2`) use thirteen. Task 3 added eight to `src/styles/tokens.css`: `--text-headline` (46px, article headline), `--text-quote` (28px, pitch band quote), `--text-section` (20px, article section headings), `--text-related` (14px, related-link headline), `--text-dek` (13px, sidebar deks + article byline), `--text-link` (12px, arrow links + footer meta), `--text-kicker` (10px, story card + related kickers), `--text-micro` (9px, sidebar kickers). The original five (`--text-feature`, `--text-serif`, `--text-card`, `--text-body`, `--text-meta`) are unchanged.
+
+**Hex literals outside `src/`.** `.storybook/preview.ts` carries two literal color values in its Storybook `backgrounds` addon configuration, which takes literal colors rather than CSS custom properties. This is outside `src/` and is a documented, deliberate exception to the no-hex-literal rule.
+
+**"Surboards" typo.** Figma node `44:42` spells "Surboards" (missing the second "f"). Per the plan's instruction not to silently correct source copy, this is reproduced verbatim in `src/content/home.ts`.

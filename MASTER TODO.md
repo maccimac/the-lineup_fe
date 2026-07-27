@@ -1,6 +1,6 @@
 [x] 1. React scaffold
 [x] 2. Design system
-[ ] 3. React components — docs/superpowers/specs/2026-07-25-react-components-design.md
+[x] 3. React components — docs/superpowers/specs/2026-07-25-react-components-design.md
 [ ] 4. Page templates (HomeTemplate, ArticleTemplate)
 [ ] 5. Pages (HomePage, ArticlePage)
 [ ] 6. Routes (react-router-dom)
