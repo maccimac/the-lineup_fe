@@ -1,0 +1,24 @@
+/* Nodes 44:35–44:38. The comp's meta line is invisible; muted ink here. */
+
+.story-card {
+  border-top: var(--rule-width-thick) solid var(--color-ink);
+  padding: var(--space-8) var(--space-8) 0;
+}
+
+.story-card__headline {
+  font-size: var(--text-card);
+  line-height: var(--leading-card);
+  color: var(--color-ink);
+  margin: var(--space-3) 0 var(--space-6);
+}
+
+.story-card__link {
+  text-decoration: none;
+}
+
+.story-card__meta {
+  color: var(--color-ink-muted);
+  letter-spacing: var(--tracking-tight);
+  text-transform: none;
+  margin: 0;
+}

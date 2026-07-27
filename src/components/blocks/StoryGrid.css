@@ -1,0 +1,13 @@
+/* Node 44:34. Three 400px columns at the page gutter. */
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: var(--color-surface);
+  padding-inline: var(--page-gutter);
+  padding-bottom: var(--space-10);
+}
+
+.story-grid > * + * {
+  border-left: var(--rule-width) solid var(--color-rule);
+}
