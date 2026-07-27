@@ -1,0 +1,16 @@
+/* Nodes 44:14–44:17. The comp's dek is invisible; muted ink here. */
+
+.hero-feature {
+  max-width: 42.8125rem; /* 685px, node 44:15 */
+}
+
+.hero-feature__headline {
+  color: var(--color-ink);
+  margin: var(--space-8) 0 0;
+}
+
+.hero-feature__dek {
+  color: var(--color-ink-muted);
+  max-width: 41.25rem; /* 660px, node 44:16 */
+  margin: var(--space-10) 0 var(--space-6);
+}
